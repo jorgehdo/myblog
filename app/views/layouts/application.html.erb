@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Myblogjorge</title>
+    <%# con este metodo ( yield(:titulo) podemos hacer que el titulo se vean en las otras vistas, en las otras vistes se pondra el metodo (provide) %>
+    <title> <%= yield(:titulo) %> </title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +11,8 @@
   </head>
 
   <body>
+    <%# esto es lo que se esta mostrando en el archivo _header.html.erb%>
+    <%= render 'shared/header' %>
     <%= yield %>
   </body>
 </html>

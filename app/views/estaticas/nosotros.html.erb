@@ -1,2 +1,67 @@
 <h1>Estaticas#nosotros</h1>
 <p>Find me in app/views/estaticas/nosotros.html.erb</p>
+
+
+<% if false %>
+	<% 1+1 %>
+	<%= 1+1 %>	
+	<%# comentario %>
+
+	<% 5.times do |x| %>
+		<%= x + 1 %>
+	<% end %>
+
+<% end %>
+
+<%# enviar un mensaje desde el controlador %>
+
+<%= @mensajes %>
+<br> <%# salto de linea %>
+<%= "El controlador dice: #{@mensajes}" %>
+
+
+<% provide(:titulo, "Nosotros") %>
+<%# desplegar una lista%>
+<ul>
+	<% @usuarios.each do |i| %>
+		<%= "<li> #{i} </li>".html_safe %>
+	<% end %>
+</ul>
+
+<%# hacer links%>
+<a href="/home/index">Home</a>
+
+<br>
+
+
+<%# de esta manera pasamos un link para que abra otra pagina%>
+
+<%= link_to 'Contacto',
+	{:controller =>'estaticas',
+	:action =>'contacto',
+	:id => 3,
+	:pagina => 2
+	},
+	:class => 'my-class',
+	:target => '_blank' 
+%>
+
+<%# aqui lo abre desde la misma pagina%>
+<%= link_to 'Contacto',
+	:controller => 'estaticas',
+	:action => 'contacto',
+	:id => 3,
+	:pagina => 2 
+%>
+
+
+
+
+
+
+
+
+
+
+
+
